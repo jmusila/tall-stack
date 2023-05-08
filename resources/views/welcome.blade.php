@@ -5,6 +5,8 @@
         <div>
             @auth
                 <a href="{{ route('dashboard') }}"></a>
+            @else
+                <a href="{{ route('login') }}">Login</a>
             @endauth
         </div>
     </nav>
