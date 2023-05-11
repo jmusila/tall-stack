@@ -17,13 +17,15 @@
         <x-primary-button class="py-3 px-8 bg-red-500 hover:bg-red-600">Subscribe</x-primary-button>
         </div>
     </div>
-   </div>
-   <div class="flex flex-col bg-pink-500 w-full h-screen">
-    <p class="text-white text-5xl font-extrabold text-center">Let's do it!</p>
-    <form class="flex flex-col items-center p-24"> 
-        <x-text-input class="px-5 py-3 w-80 border border-blue-400" type="email" name="email" placeholder="Email Address"></x-text-input>
-        <span class="text-gray-100 text-xs">We will send you a confirmation email.</span>
-        <x-primary-button class="px-5 py-3 mt-5 w-80 bg-blue-500 justify-center">Get In</x-primary-button>
-    </form>
+    <div class="flex fixed top-0 bg-gray-900 bg-opacity-60 items-center justify-center w-full h-full">
+        <div class="mg-auto bg-pink-500 shadow-2xl rounded-xl p-8">
+            <p class="text-white text-5xl font-extrabold text-center">Let's do it!</p>
+            <form class="flex flex-col items-center p-24"> 
+                <x-text-input class="px-5 py-3 w-80 border border-blue-400" type="email" name="email" placeholder="Email Address"></x-text-input>
+                <span class="text-gray-100 text-xs">We will send you a confirmation email.</span>
+                <x-primary-button class="px-5 py-3 mt-5 w-80 bg-blue-500 justify-center hover:bg-blue-700">Get In</x-primary-button>
+            </form>
+        </div>
+    </div>
    </div>
 </x-guest-layout>
