@@ -20,7 +20,7 @@
     <div class="mg-auto bg-pink-500 shadow-2xl rounded-xl p-8">
         <p class="text-white text-5xl font-extrabold text-center">Let's do it!</p>
         <form class="flex flex-col items-center p-24" wire:submit.prevent="subscribe" wire:loading.class="opacity-50" wire:target="subscribe"> 
-            <x-text-input class="px-5 py-3 w-80 border border-blue-400" type="email" name="email" placeholder="Email Address"></x-text-input>
+            <input class="rounded px-5 py-3 w-80 border border-blue-400" type="email" name="email" placeholder="Email Address" wire:model="email"></input>
             <span class="text-gray-100 text-xs">We will send you a confirmation email.</span>
             <button class="rounded px-5 py-3 mt-5 w-80 bg-blue-500 justify-center hover:bg-blue-700">Get In</button>
         </form>

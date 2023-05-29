@@ -7,9 +7,11 @@ use Livewire\Component;
 
 class LandingPage extends Component
 {
+    public $email;
+    
     public function subscribe()
     {
-        Log::info('I am being clicked!');
+        Log::info('I am being clicked! ' . $this->email);
     }
 
     public function render()
