@@ -1,4 +1,7 @@
-<div class="flex flex-col bg-indigo-900 w-full h-screen" x-cloak x-data="{showSubscribe: false,}">
+<div class="flex flex-col bg-indigo-900 w-full h-screen" x-cloak x-data="{
+    showSubscribe: true,
+    showSuccess: true,
+}">
 <nav class="flex pt-5 justify-between container mx-auto text-indigo-200">
     <a class="text-4xl font-bold" href="/"><x-application-logo class="w-16 h-16 fill-current"></x-application-logo></a>
     <div class="flex justify-end">
@@ -24,6 +27,13 @@
             <span class="text-gray-100 text-xs">We will send you a confirmation email.</span>
             <button class="rounded px-5 py-3 mt-5 w-80 bg-blue-500 justify-center hover:bg-blue-700">Get In</button>
         </form>
+    </div>
+</div>
+<div class="flex fixed top-0 bg-gray-900 bg-opacity-60 items-center justify-center w-full h-full" x-show="showSuccess" x-on:click.self="showSuccess = false" x-on:keydown.escape.window="showSuccess = false">
+    <div class="mg-auto bg-green-500 shadow-2xl rounded-xl p-8">
+        <p class="animate-pulse text-white text-9xl font-extrabold text-center">&check;</p>
+        <p class="text-white text-5xl font-extrabold text-center mt-16">Great!</p>
+        <p class="text-white text-3xl text-center">See you in your inbox.</p>
     </div>
 </div>
 </div>
