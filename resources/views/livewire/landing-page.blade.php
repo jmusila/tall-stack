@@ -1,6 +1,6 @@
 <div class="flex flex-col bg-indigo-900 w-full h-screen" x-cloak x-data="{
-    showSubscribe: true,
-    showSuccess: true,
+    showSubscribe: false,
+    showSuccess: false,
 }">
 <nav class="flex pt-5 justify-between container mx-auto text-indigo-200">
     <a class="text-4xl font-bold" href="/"><x-application-logo class="w-16 h-16 fill-current"></x-application-logo></a>
@@ -24,7 +24,7 @@
         <p class="text-white text-5xl font-extrabold text-center">Let's do it!</p>
         <form class="flex flex-col items-center p-24" wire:submit.prevent="subscribe" wire:loading.class="opacity-50" wire:target="subscribe"> 
             <input class="rounded px-5 py-3 w-80 border border-blue-400" type="email" name="email" placeholder="Email Address" wire:model="email"></input>
-            <span class="text-gray-100 text-xs">We will send you a confirmation email.</span>
+            <span class="text-gray-100 text-xs"> {{ $errors->has('email') ? $errors->first('email') : 'We will send you a confirmation email.'}}</span>
             <button class="rounded px-5 py-3 mt-5 w-80 bg-blue-500 justify-center hover:bg-blue-700">Get In</button>
         </form>
     </div>
