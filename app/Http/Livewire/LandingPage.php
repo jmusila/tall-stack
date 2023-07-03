@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Subscriber;
 use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 use Livewire\Component;
@@ -20,6 +21,13 @@ class LandingPage extends Component
         'email' => 'required|email:filter|unique:subscribers,email'
     ];
 
+    public function mount(Request $request)
+    {
+        if ($request->has('verified') && $request->verified == 1) {
+            $this->showSuccess = true;
+        }
+    }
+
     public function subscribe()
     {
         $this->validate();
@@ -31,7 +39,7 @@ class LandingPage extends Component
 
             $notification = new VerifyEmail();
 
-            $notification->createUrlUsing( function ($notifiable) {
+            $notification->createUrlUsing(function ($notifiable) {
                 return URL::temporarySignedRoute(
                     'subscribers.verify',
                     now()->addMinutes(30),

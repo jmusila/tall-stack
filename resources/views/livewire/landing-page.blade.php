@@ -33,7 +33,11 @@
     <div class="mg-auto bg-green-500 shadow-2xl rounded-xl p-8">
         <p class="animate-pulse text-white text-9xl font-extrabold text-center">&check;</p>
         <p class="text-white text-5xl font-extrabold text-center mt-16">Great!</p>
-        <p class="text-white text-3xl text-center">See you in your inbox.</p>
+        @if(request()->has('verified') && request()->verified == 1)
+            <p class="text-white text-3xl text-center">Thank you for confirming.</p>
+        @else
+            <p class="text-white text-3xl text-center">See you in your inbox.</p>
+        @endif
     </div>
 </div>
 </div>
