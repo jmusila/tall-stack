@@ -9,6 +9,8 @@ class SubscriberController extends Controller
 {
     public function verify(Subscriber $subscriber)
     {
-        $subscriber->markEmailAsVerified();
+        if (! $subscriber->hasVerifiedEmail()) {
+            $subscriber->markEmailAsVerified();
+        }
     }
 }

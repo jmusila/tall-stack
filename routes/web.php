@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/subscribers/verify/{subscriber}', [SubscriberController::class, 'verify']);
+Route::get('/subscribers/verify/{subscriber}', [SubscriberController::class, 'verify'])->name('subscribers.verify');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
