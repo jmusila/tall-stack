@@ -56,9 +56,4 @@ class LandingPage extends Component
         $this->showSubscribe = false;
         $this->showSuccess = true;
     }
-
-    public function render()
-    {
-        return view('livewire.landing-page');
-    }
 }
