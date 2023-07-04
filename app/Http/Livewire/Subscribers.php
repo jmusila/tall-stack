@@ -14,4 +14,11 @@ class Subscribers extends Component
 
         return view('livewire.subscribers')->with(['subscribers' => $subscribers]);
     }
+
+    public function delete(Subscriber $subscriber)
+    {
+        $subscriber->delete();
+
+        session()->flash('message', 'Subsrciber deleted successfully.');
+    }
 }
