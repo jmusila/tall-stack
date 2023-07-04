@@ -15,4 +15,11 @@ class SubscriberController extends Controller
 
         return redirect('/?verified=1');
     }
+
+    public function index()
+    {
+        $subscribers = Subscriber::all();
+
+        return view('subscribers.index')->with(['subscribers' => $subscribers]);
+    }
 }

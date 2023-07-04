@@ -9,12 +9,16 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <p class="text-2l text-gray-600 font-bold mb-6 underline">Actions</p>
-                    <ul class="list-disc pl-5">
-                        <li class="text-blue-500 hover:underline">
-                            <a href="{{ route('subscribers.all') }}">Manage Subscribers</a>
-                        </li>
-                    </ul>
+                    <p class="text-2l text-gray-600 font-bold mb-6 underline">Subscribers</p>
+                    @if ($subscribers->isEmpty())
+                        <div class="flex w-full bg-red-100 p-5 rounded-lg">
+                            <p class="text-red-400">No subsrcibers found</p>
+                        </div>
+                    @else
+                        <table class="w-full">
+
+                        </table>
+                    @endif
                 </div>
             </div>
         </div>
