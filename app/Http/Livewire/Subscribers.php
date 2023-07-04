@@ -10,6 +10,10 @@ class Subscribers extends Component
 {
     public $search;
 
+    protected $queryString = [
+        'search' => ['except' => '']
+    ];
+
     public function render()
     {
         $subscribers = Subscriber::where('email', 'like', "%{$this->search}%")->paginate('15');
