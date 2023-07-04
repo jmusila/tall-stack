@@ -3,14 +3,16 @@
 namespace App\Http\Livewire;
 
 use App\Models\Subscriber;
+use Illuminate\Http\Request;
 use Livewire\Component;
 
 class Subscribers extends Component
 {
+    public $search;
 
     public function render()
     {
-        $subscribers = Subscriber::paginate('15');
+        $subscribers = Subscriber::where('email', 'like', "%{$this->search}%")->paginate('15');
 
         return view('livewire.subscribers')->with(['subscribers' => $subscribers]);
     }

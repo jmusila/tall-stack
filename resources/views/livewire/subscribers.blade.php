@@ -1,5 +1,10 @@
 <div class="p-6 text-gray-900 dark:text-gray-100">
     <p class="text-2l text-gray-600 font-bold mb-6 underline">Subscribers</p>
+    <div class="px-8">
+        <input type="text" class="rounded-lg border float-right border-gray-300 mb-4 pl-8 w-1/3" 
+        placeholder="Search"
+        wire:model="search"
+        >
     @if (session()->has('message'))
         <div class="alert alert-success flex w-full bg-red-100 p-5 rounded-lg">
             <p class="text-red-400">{{ session('message') }}</p>
@@ -38,4 +43,5 @@
             </tbody>
         </table>
     @endif
+    </div>
 </div>
