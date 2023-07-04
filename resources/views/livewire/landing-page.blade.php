@@ -25,7 +25,10 @@
         <form class="flex flex-col items-center p-24" wire:submit.prevent="subscribe" wire:loading.class="opacity-50" wire:target="subscribe"> 
             <input class="rounded px-5 py-3 w-80 border border-blue-400" type="email" name="email" placeholder="Email Address" wire:model="email"></input>
             <span class="text-gray-100 text-xs"> {{ $errors->has('email') ? $errors->first('email') : 'We will send you a confirmation email.'}}</span>
-            <button class="rounded px-5 py-3 mt-5 w-80 bg-blue-500 justify-center hover:bg-blue-700">Get In</button>
+            <button class="rounded px-5 py-3 mt-5 w-80 bg-blue-500 justify-center hover:bg-blue-700">
+                <span class="animate-spin" wire:loading wire:target="subscribe">&#9696;</span>
+                <span wire:loading.remove wire:target="subscribe">Get In</span>
+            </button>
         </form>
     </div>
 </div>
