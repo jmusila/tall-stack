@@ -16,7 +16,22 @@
                         </div>
                     @else
                         <table class="w-full">
-
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Email</th>
+                                    <th>Verified</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($subscribers as $subscriber)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $subscriber->email }}</td>
+                                        <td>{{ optional($subscriber->email_verified_at)->diffForHumans() ?? 'Never' }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     @endif
                 </div>

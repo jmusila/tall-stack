@@ -18,7 +18,7 @@ class SubscriberController extends Controller
 
     public function index()
     {
-        $subscribers = Subscriber::all();
+        $subscribers = Subscriber::paginate('15');
 
         return view('subscribers.index')->with(['subscribers' => $subscribers]);
     }
